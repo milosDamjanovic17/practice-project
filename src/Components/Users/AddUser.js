@@ -25,7 +25,10 @@ const AddUser = (props) => {
     } else if (+enteredAge < 1) {
       console.log("lmao unesi normalan broj godina");
     } else {
-      console.table(`Username: ${enteredUsername}, Age: ${enteredAge}`);
+      console.table(
+        `Username: ${enteredUsername}, Age: ${enteredAge} added to list!`
+      );
+      props.onAddUser(enteredUsername, enteredAge);
       setEnteredUsername("");
       setEnteredAge("");
     }
