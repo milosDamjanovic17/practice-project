@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./UsersList.module.css";
 import Card from "../UI/Card";
+import ErrorModal from "../UI/ErrorModal";
 
 const UsersList = (props) => {
   return (
