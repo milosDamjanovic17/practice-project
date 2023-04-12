@@ -21,6 +21,7 @@ const AddUser = (props) => {
     setEnteredAge(event.target.value);
   };
 
+  // add user function
   const AddUserHandler = (event) => {
     event.preventDefault();
 
@@ -38,7 +39,8 @@ const AddUser = (props) => {
       console.table(
         `Username: ${enteredUsername}, Age: ${enteredAge} added to list!`
       );
-      props.onAddUser(enteredUsername, Math.round(enteredAge)); // stavio Marh round metodu cisto da zaokruzi broj
+      // passing the state to parent onAddUser, where we'll create user obj and store it to users list
+      props.onAddUser(enteredUsername, Math.round(enteredAge)); // stavio Math round metodu cisto da zaokruzi broj
       setEnteredUsername("");
       setEnteredAge("");
     }
@@ -50,7 +52,8 @@ const AddUser = (props) => {
 
   return (
     <div>
-      {error && (
+      {/* if error is a truthy value, show error modal*/}
+      {error && ( 
         <ErrorModal
           onConfirm={errorHandler}
           title={error.title}
