@@ -16,7 +16,7 @@ const AddUser = (props) => {
         <label htmlFor="age">Age (Years)</label>
         <input id="age" type="number" placeholder="Enter your age" />
         {/* <button type="submit">Add User</button> */}
-        <Button />
+        <Button type="submit">Add User</Button>
       </form>
     </Card>
   );
