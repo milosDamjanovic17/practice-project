@@ -9,7 +9,7 @@ const AddUser = (props) => {
   const [enteredUsername, setEnteredUsername] = useState("");
   // state definition for age input
   const [enteredAge, setEnteredAge] = useState("");
-  // state definition for error modal
+  // state definition for error modal, by default in this occasion error is undefined
   const [error, setError] = useState();
 
   // function for storing username, whatever user typed, into a new state
@@ -38,15 +38,25 @@ const AddUser = (props) => {
       console.table(
         `Username: ${enteredUsername}, Age: ${enteredAge} added to list!`
       );
-      props.onAddUser(enteredUsername, enteredAge);
+      props.onAddUser(enteredUsername, Math.round(enteredAge)); // stavio Marh round metodu cisto da zaokruzi broj
       setEnteredUsername("");
       setEnteredAge("");
     }
   };
 
+  const errorHandler = () => {
+    setError(null);
+  };
+
   return (
     <div>
-      {error && <ErrorModal title={error.title} message={error.message} />}
+      {error && (
+        <ErrorModal
+          onConfirm={errorHandler}
+          title={error.title}
+          message={error.message}
+        />
+      )}
       <Card className={style.input}>
         <form onSubmit={AddUserHandler}>
           <label htmlFor="username">Username</label>
