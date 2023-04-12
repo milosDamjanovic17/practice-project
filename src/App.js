@@ -8,13 +8,13 @@ function App() {
 
     {
       id: 'a1',
-      name: 'Milos',
+      name: 'DUMMY1',
       age: 15
     },
     
     {
       id: 'a2',
-      name: 'DUMMY1',
+      name: 'DUMMY2',
       age: 90
     }
 
